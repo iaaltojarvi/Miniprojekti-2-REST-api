@@ -62,6 +62,7 @@ const messagesId = (userid) => {
 
 //selects messages by user_id and by post's id @Inari
 const getWithThreadId = (thread_id) => {
+    console.log(thread_id);
     return pool.connect()
         .then(client => {
             const sql = 'SELECT content, id, thread_id FROM post WHERE thread_id=$1;';
